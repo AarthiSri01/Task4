@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Login Authentication</title>
+        <style>
+         body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+         }
+
+         .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+         }
+
+         h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+         }
+
+         .form-group {
+            margin-bottom: 15px;
+         }
+
+         .form-group label {
+            display: block;
+            margin-bottom: 5px;
+         }
+
+         .form-group input {
+            width: 100%;
+            padding: 5px;
+            font-size: 14px;
+         }
+
+         .btn {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            cursor: pointer;
+         }
+
+         .btn:hover {
+            background-color: #0056b3;
+         }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+         <h1>Login Authentication</h1>
+         <form id="login-form">
+                <div class="form-group">
+                 <label for="username">Username:</label>
+                 <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                 <label for="password">Password:</label>
+                 <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+        <script>
+            document.querySelector('button').addEventListener('click', function() {
+               var username = document.getElementById('uname').value;
+               var password = document.getElementById('psw').value;
+ 
+               // Store the values in an array or dictionary
+               var users = [];
+               users.push({username: username, password: password});
+ 
+               // Check for further login
+               for (var i = 0; i < users.length; i++) {
+                  if (users[i].username === username && users[i].password === password) {
+                      alert('Login successful');
+                      break;
+                     } else {
+                       alert('Login failed');
+                     }
+                 }
+            });
+        </script>
+    </body>
+</html>
